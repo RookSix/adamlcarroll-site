@@ -173,48 +173,41 @@
   }
 
   /* CONTACT */
-  #contact { text-align: left; }
+  #contact { text-align: center; }
   #contact h2 { margin-bottom: 0.75rem; }
-  .contact-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 1.25rem;
-    margin-bottom: 2.5rem;
+  .contact-body { max-width: 560px; margin: 0 auto; }
+  .contact-body .section-intro { margin-bottom: 0.5rem; }
+  .contact-primary {
+    display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;
+    margin: 2rem 0 2.5rem;
   }
-  .contact-card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 6px;
-    padding: 1.75rem;
-    transition: border-color 0.2s;
-  }
-  .contact-card:hover { border-color: var(--accent-dim); }
-  .contact-card h3 { font-size: 1rem; font-weight: 600; margin-bottom: 0.4rem; }
-  .contact-card p { font-size: 0.88rem; color: var(--muted); line-height: 1.65; margin-bottom: 1.25rem; }
-  .contact-card a {
+  .contact-cta {
     display: inline-flex; align-items: center; gap: 0.4rem;
     background: var(--accent); color: #0a0a0a;
-    padding: 0.55rem 1.25rem; border-radius: 4px;
-    font-weight: 600; font-size: 0.85rem; letter-spacing: 0.03em;
+    padding: 0.75rem 1.75rem; border-radius: 4px;
+    font-weight: 600; font-size: 0.9rem; letter-spacing: 0.04em;
     transition: opacity 0.2s;
   }
-  .contact-card a:hover { opacity: 0.85; color: #0a0a0a; }
-  .contact-card.secondary a {
-    background: transparent;
-    color: var(--muted);
-    border: 1px solid var(--border);
-    transition: color 0.2s, border-color 0.2s;
+  .contact-cta:hover { opacity: 0.85; color: #0a0a0a; }
+  .contact-secondary {
+    font-size: 0.88rem; color: var(--muted); margin-bottom: 3rem;
   }
-  .contact-card.secondary a:hover { color: var(--text); border-color: var(--accent-dim); opacity: 1; }
-  .contact-links { display: flex; justify-content: flex-start; gap: 1rem; flex-wrap: wrap; margin-top: 0.5rem; }
-  .contact-link {
-    display: flex; align-items: center; gap: 0.4rem;
+  .contact-secondary a { color: var(--muted); border-bottom: 1px solid var(--border); padding-bottom: 1px; transition: color 0.2s, border-color 0.2s; }
+  .contact-secondary a:hover { color: var(--accent); border-color: var(--accent-dim); }
+  .contact-craft {
+    border-top: 1px solid var(--border);
+    padding-top: 2rem;
+    margin-top: 0.5rem;
+  }
+  .contact-craft p { font-size: 0.9rem; color: var(--muted); margin-bottom: 0.75rem; }
+  .contact-craft a {
+    display: inline-flex; align-items: center; gap: 0.4rem;
     color: var(--muted); font-size: 0.88rem;
     border: 1px solid var(--border); border-radius: 4px;
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 1.25rem;
     transition: color 0.2s, border-color 0.2s;
   }
-  .contact-link:hover { color: var(--text); border-color: var(--accent-dim); }
+  .contact-craft a:hover { color: var(--text); border-color: var(--accent-dim); }
 
   /* FOOTER */
   footer {
@@ -419,27 +412,16 @@
 <section id="contact">
   <p class="section-label">Contact</p>
   <h2>Work with me.</h2>
-  <p class="section-intro" style="margin-bottom:2.5rem;">I take on a limited number of consulting engagements and contract projects each year. If what you're building is technically complex, operationally messy, or genuinely hard &mdash; that's where I do my best work.</p>
-  <div class="contact-grid">
-    <div class="contact-card">
-      <h3>Consulting &amp; Contract Work</h3>
-      <p>AI systems, automation pipelines, IT architecture, workflow redesign. Engagements range from short-term audits to long-form embedded work. Rates and availability on request.</p>
-      <a href="mailto:adamlcarroll@gmail.com?subject=Consulting%20Inquiry">Get in touch</a>
+  <div class="contact-body">
+    <p class="section-intro">Available for consulting engagements and contract work &mdash; AI systems, automation pipelines, IT architecture, and operations strategy. If the problem is real and the stakes matter, let&rsquo;s talk.</p>
+    <div class="contact-primary">
+      <a href="https://lastoutpostconsulting.com" class="contact-cta" target="_blank">Last Outpost Consulting</a>
     </div>
-    <div class="contact-card secondary">
-      <h3>Last Outpost Consulting</h3>
-      <p>Formal consulting practice for AI deployment, operations strategy, and technology leadership. Project scoping, SOWs, and ongoing retainer arrangements available.</p>
-      <a href="https://lastoutpostconsulting.com" target="_blank">Visit site</a>
+    <p class="contact-secondary">Other inquiries &mdash; <a href="mailto:adamlcarroll@gmail.com">send me an email</a></p>
+    <div class="contact-craft">
+      <p>Looking for handmade artisanal craftwork?</p>
+      <a href="https://lastoutpostcompany.com" target="_blank">Last Outpost Company</a>
     </div>
-    <div class="contact-card secondary">
-      <h3>Other Inquiries</h3>
-      <p>Collaborations, interesting problems, or anything that doesn't fit neatly into a category. I read everything.</p>
-      <a href="mailto:adamlcarroll@gmail.com">Send a message</a>
-    </div>
-  </div>
-  <p class="section-label" style="margin-bottom:0.75rem;">Also at</p>
-  <div class="contact-links">
-    <a href="https://lastoutpostcompany.com" class="contact-link" target="_blank">Last Outpost Company</a>
   </div>
 </section>
 
