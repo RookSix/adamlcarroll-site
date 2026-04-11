@@ -173,15 +173,45 @@
   }
 
   /* CONTACT */
-  #contact { text-align: center; }
+  #contact { text-align: left; }
   #contact h2 { margin-bottom: 0.75rem; }
-  #contact p { color: var(--muted); margin-bottom: 2rem; }
-  .contact-links { display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; }
+  .contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.25rem;
+    margin-bottom: 2.5rem;
+  }
+  .contact-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 1.75rem;
+    transition: border-color 0.2s;
+  }
+  .contact-card:hover { border-color: var(--accent-dim); }
+  .contact-card h3 { font-size: 1rem; font-weight: 600; margin-bottom: 0.4rem; }
+  .contact-card p { font-size: 0.88rem; color: var(--muted); line-height: 1.65; margin-bottom: 1.25rem; }
+  .contact-card a {
+    display: inline-flex; align-items: center; gap: 0.4rem;
+    background: var(--accent); color: #0a0a0a;
+    padding: 0.55rem 1.25rem; border-radius: 4px;
+    font-weight: 600; font-size: 0.85rem; letter-spacing: 0.03em;
+    transition: opacity 0.2s;
+  }
+  .contact-card a:hover { opacity: 0.85; color: #0a0a0a; }
+  .contact-card.secondary a {
+    background: transparent;
+    color: var(--muted);
+    border: 1px solid var(--border);
+    transition: color 0.2s, border-color 0.2s;
+  }
+  .contact-card.secondary a:hover { color: var(--text); border-color: var(--accent-dim); opacity: 1; }
+  .contact-links { display: flex; justify-content: flex-start; gap: 1rem; flex-wrap: wrap; margin-top: 0.5rem; }
   .contact-link {
     display: flex; align-items: center; gap: 0.4rem;
-    color: var(--muted); font-size: 0.9rem;
+    color: var(--muted); font-size: 0.88rem;
     border: 1px solid var(--border); border-radius: 4px;
-    padding: 0.6rem 1.25rem;
+    padding: 0.5rem 1rem;
     transition: color 0.2s, border-color 0.2s;
   }
   .contact-link:hover { color: var(--text); border-color: var(--accent-dim); }
@@ -388,13 +418,28 @@
 <!-- CONTACT -->
 <section id="contact">
   <p class="section-label">Contact</p>
-  <h2>Let&rsquo;s work together.</h2>
-  <p>Open to consulting engagements, contract work, and interesting problems.</p>
+  <h2>Work with me.</h2>
+  <p class="section-intro" style="margin-bottom:2.5rem;">I take on a limited number of consulting engagements and contract projects each year. If what you're building is technically complex, operationally messy, or genuinely hard &mdash; that's where I do my best work.</p>
+  <div class="contact-grid">
+    <div class="contact-card">
+      <h3>Consulting &amp; Contract Work</h3>
+      <p>AI systems, automation pipelines, IT architecture, workflow redesign. Engagements range from short-term audits to long-form embedded work. Rates and availability on request.</p>
+      <a href="mailto:adamlcarroll@gmail.com?subject=Consulting%20Inquiry">Get in touch</a>
+    </div>
+    <div class="contact-card secondary">
+      <h3>Last Outpost Consulting</h3>
+      <p>Formal consulting practice for AI deployment, operations strategy, and technology leadership. Project scoping, SOWs, and ongoing retainer arrangements available.</p>
+      <a href="https://lastoutpostconsulting.com" target="_blank">Visit site</a>
+    </div>
+    <div class="contact-card secondary">
+      <h3>Other Inquiries</h3>
+      <p>Collaborations, interesting problems, or anything that doesn't fit neatly into a category. I read everything.</p>
+      <a href="mailto:adamlcarroll@gmail.com">Send a message</a>
+    </div>
+  </div>
+  <p class="section-label" style="margin-bottom:0.75rem;">Also at</p>
   <div class="contact-links">
-    <a href="mailto:adamlcarroll@gmail.com" class="contact-link">&#x2709;&#xFE0F; adamlcarroll@gmail.com</a>
-    <a href="https://lastoutpostconsulting.com" class="contact-link" target="_blank">&#x1F9E0; Last Outpost Consulting</a>
-    <a href="https://lastoutpostinvestigations.com" class="contact-link" target="_blank">&#x1F50D; Last Outpost Investigations</a>
-    <a href="https://lastoutpostcompany.com" class="contact-link" target="_blank">&#x1F6E0;&#xFE0F; Last Outpost Company</a>
+    <a href="https://lastoutpostcompany.com" class="contact-link" target="_blank">Last Outpost Company</a>
   </div>
 </section>
 
